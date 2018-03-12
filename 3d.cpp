@@ -24,7 +24,7 @@ void addLine(){
 void drawLines(){
 	for(int i=1;i<l[0].total+1;i++){
 		glBegin(GL_LINES);
-		glColor3f(l[i].r,l[i].g,l[i].b);
+		glColor3f(0,1,0);
 		glVertex3f(l[i].x1,l[i].y1,l[i].z1);
 		glVertex3f(l[i].x2,l[i].y2,l[i].z2);
 		glEnd();
@@ -53,7 +53,7 @@ void addQuad(){
 void drawQuads(){
 	for(int i=0;i<q[0].total;i++){
 		glBegin(GL_QUADS);
-		glColor3f(q[i].r,q[i].g,q[i].b);
+		glColor3f(1,0,0);
 		glVertex3f(q[i].x1,q[i].y1,q[i].z1);
 		glVertex3f(q[i].x2,q[i].y2,q[i].z2);
 		glVertex3f(q[i].x3,q[i].y3,q[i].z3);
