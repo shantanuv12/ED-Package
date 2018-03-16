@@ -37,7 +37,7 @@ void project(){
 		gluPerspective(fov,asp,dim/4,4*dim);
 	}
 	else{
-		//Orthographic 
+		//Orthographic
 		glOrtho(-dim*asp,+dim*asp,-dim,+dim,-dim,+dim);
 	}
 
@@ -63,7 +63,7 @@ void drawAxes(){
 	        glRasterPos3d(0,len,0);
 	//	print("Y");
       		glRasterPos3d(0,0,len);
-	//	print("Z");	
+	//	print("Z");
 	}
 }
 
@@ -87,7 +87,7 @@ void drawValues(){
 		glRasterPos3fv(vertG);
 	//	print("G");
 		glRasterPos3fv(vertH);
-	//	print("H");	
+	//	print("H");
 	}
 }
 
@@ -131,8 +131,8 @@ void drawShape(){
 void display(){
 	glClear(GL_COLOR_BUFFER_BIT| GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
-        glLoadIdentity(); 
-  	
+        glLoadIdentity();
+
 
 	if(toggleMode){
 		double Ex=-2*dim*Sin(th)*Cos(ph);
@@ -140,15 +140,15 @@ void display(){
 		double Ez=+2*dim*Cos(th)*Cos(ph);
 
 		gluLookAt(Ex,Ey,Ez,0,0,0,0,Cos(ph),0);
-	}	
+	}
 	else{
 		glRotatef(ph,1,0,0);
-		glRotatef(th,0,1,0);	
+		glRotatef(th,0,1,0);
 	}
 	drawAxes();
 	drawValues();
 	drawShape();
-	
+
 	glFlush();
 	glutSwapBuffers();
 }
@@ -191,7 +191,6 @@ void windowSpecial(int key,int x,int y){
 
 void WindowMenu(int val){
 	windowKey((unsigned char)val,0,0);
-
 }
 
 
@@ -210,8 +209,8 @@ int main(int argc, char* argv[]){
 	glutAddMenuEntry("Toggle Axes [j]",'j');
 	glutAddMenuEntry("Toggle Values [k]",'k');
 	glutAddMenuEntry("Toggle Mode [l]",'l');
-	glutAttachMenu(GLUT_RIGHT_BUTTON); 
-	
+	glutAttachMenu(GLUT_RIGHT_BUTTON);
+
 	glutMainLoop();
 	return 0;
 }
