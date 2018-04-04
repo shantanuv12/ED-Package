@@ -1,16 +1,10 @@
 #include <iostream>
 #include <GL/glut.h>
+#include "line3D.h"
 using namespace std;
 
 int cx=0,cy=0,cz=0;
 int cn,co;
-struct Line{
-	int x1,y1,z1,x2,y2,z2;
-	float r,g,b;
-	int state;
-	int total;
-
-};
 Line l[1000];
 void addLine(){
 	l[0].state++;
@@ -58,7 +52,7 @@ void drawQuads(){
 		glVertex3f(q[i].x2,q[i].y2,q[i].z2);
 		glVertex3f(q[i].x3,q[i].y3,q[i].z3);
 		glVertex3f(q[i].x4,q[i].y4,q[i].z4);
-		glEnd();	
+		glEnd();
 	}
 }
 
@@ -95,7 +89,7 @@ void createGrid(){
 		glEnd();
 		glPopMatrix();
 	}
-	
+
 	for(k=0;k<40;k++){
 		glPushMatrix();
 		if(k<20){glTranslatef(k,0,0);}
@@ -108,7 +102,7 @@ void createGrid(){
 		glEnd();
 		glPopMatrix();
 	}
-	
+
 }
 /*
 void createGridV(){
@@ -162,11 +156,11 @@ void keyboard(unsigned char key,int x, int y){
 	if(key=='s'){cz+=1;}
 	if(key=='d'){cx+=1;}
 	if(key=='q'){cy+=1;}
-	
+
 	if(key=='['){addLine();}	//1
 	if(key==']'){addQuad();} //2
 
-	glutPostRedisplay();	
+	glutPostRedisplay();
 }
 
 int main(int argc, char **argv){
@@ -181,4 +175,3 @@ int main(int argc, char **argv){
 	glutMainLoop();
 	return 0;
 }
-

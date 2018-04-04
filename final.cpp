@@ -1,8 +1,9 @@
-#include <GL/glut.h>
+/*
+ * #include <GL/glut.h>
 #include <math.h>
 #include <string.h>
 #include <iostream>
-using namespace std;
+#include "line3D.h"
 #define PI 3.1415926535898 // Defining Pi
 #define Cos(t) cos(PI/180*(t))
 #define Sin(t) sin(PI/180*(t))
@@ -18,10 +19,11 @@ int toggleValues=1;
 int toggleMode=0;
 int th=0; //azimuth view angle theta
 int ph=0; //elevation angle phi
-int fov= 55; //field of view
+int fov=55; //field of view
 int asp=1; // aspect ratio
-
-
+*/
+#include "final.h"
+using namespace std;
 void project(){
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -52,11 +54,11 @@ void drawAxes(){
 		glVertex3d(0,0,len);
 		glEnd();
 
-		glRasterPos3d(len,0,0);
+//		glRasterPos3d(len,0,0);
 	//	print("X");
-	    glRasterPos3d(0,len,0);
+//	    glRasterPos3d(0,len,0);
 	//	print("Y");
-      	glRasterPos3d(0,0,len);
+//      	glRasterPos3d(0,0,len);
 	//	print("Z");
 	}
 }
@@ -79,14 +81,7 @@ void windowSpecial(int key,int x,int y){
 	project();
 	glutPostRedisplay();
 }
-struct Line{
-	int x1,y1,z1,x2,y2,z2;
-	float r,g,b;
-	int state;
-	int total;
 
-};
-Line l[1000];
 void addLine(){
 	l[0].state++;
 	if(l[0].state>2){ l[0].state=1;}
@@ -102,37 +97,6 @@ void drawLines(){
 		glColor3f(0,1,0);
 		glVertex3f(l[i].x1,l[i].y1,l[i].z1);
 		glVertex3f(l[i].x2,l[i].y2,l[i].z2);
-		glEnd();
-	}
-}
-
-struct Quads{
-	int x1,x2,x3,x4,y1,y2,y3,y4,z1,z2,z3,z4;
-	float r,g,b;
-	int state;
-	int total;
-
-};
-Quads q[1000];
-void addQuad(){
-	q[0].state++;
-	if(q[0].state>4){ q[0].state=1;}
-        int st=q[0].state;
-        if(st==1){q[0].total++; co=q[0].total;}
-        if(st==1) {q[co].x1=cx;q[co].y1=cy;q[co].z1=cz;}
-        if(st==1 || st==2){ q[co].x2=cx;q[co].y2=cy;q[co].z2=cz; }
-	    if(st==1 || st==2 || st==3){ q[co].x3=cx;q[co].y3=cy;q[co].z3=cz; }
-	    if(st==1 || st==2 || st==3 || st==4){ q[co].x4=cx;q[co].y4=cy;q[co].z4=cz;}
-}
-
-void drawQuads(){
-	for(int i=0;i<q[0].total;i++){
-		glBegin(GL_QUADS);
-		glColor3f(1,0,0);
-		glVertex3f(q[i].x1,q[i].y1,q[i].z1);
-		glVertex3f(q[i].x2,q[i].y2,q[i].z2);
-		glVertex3f(q[i].x3,q[i].y3,q[i].z3);
-		glVertex3f(q[i].x4,q[i].y4,q[i].z4);
 		glEnd();
 	}
 }
@@ -153,7 +117,7 @@ void createGrid(){
 		if(i>=20){glTranslatef(i-20,0,0);glRotatef(-90,0,1,0);}
                 glBegin(GL_LINES);
                 glColor3f(1,1,1);
-		glLineWidth(1);
+				glLineWidth(1);
                 glVertex3f(0,0,0);
                 glVertex3f(19,0,0);
                 glEnd();
@@ -195,15 +159,14 @@ void windowKey(unsigned char key, int x, int y){
 	else if(key=='i'&& key<179) fov+=1;
 	else if(key=='o') dim+=0.1;
 	else if(key=='p') dim-=0.1;
-    else if(key=='w'){cz-=1;}
+    else if(key=='w'){cz+=1;}
 	else if(key=='a'){cx-=1;}
 	else if(key=='z'){cy-=1;}
-	else if(key=='s'){cz+=1;}
+	else if(key=='s'){cz-=1;}
 	else if(key=='d'){cx+=1;}
 	else if(key=='q'){cy+=1;}
 
 	else if(key=='['){addLine();}	//1
-	else if(key==']'){addQuad();}
 	project();
 	glutPostRedisplay();
 }
@@ -212,7 +175,6 @@ void WindowMenu(int val){
 	windowKey((unsigned char)val,0,0);
 
 }
-
 
 void display(){
 	glClear(GL_COLOR_BUFFER_BIT| GL_DEPTH_BUFFER_BIT);
@@ -233,7 +195,6 @@ void display(){
     createCube();
 	drawAxes();
 	drawLines();
-	drawQuads();
 	glFlush();
 	glutSwapBuffers();
 }
