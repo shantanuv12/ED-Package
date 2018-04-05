@@ -1,4 +1,4 @@
-/*The object created by the Algorithm is displayed on the OpenGL Window using the function present in this file*/
+/*!The object created by the Algorithm is displayed on the OpenGL Window using the function present in this file*/
 
 extern "C"{
 	#include "wireframe.h"
@@ -10,24 +10,25 @@ extern "C"{
 #include <iostream>
 #include "screencasts.h"
 #include "prototypes.h"
+#include "print.h"
 using namespace std;
-#define PI 3.1415926535898 // Defining Pi
+#define PI 3.1415926535898 /*! Defining Pi */
 #define Cos(t) cos(PI/180*(t))
 #define Sin(t) sin(PI/180*(t))
 
 double dim=3.0;
-int windowWidth=1280;
-int windowHeight=1280;
+int windowWidth=1280; /*! Defining windowWidth*/
+int windowHeight=1280; /*! Defining windowHeight*/
 
 int toggleAxes=0;
 int toggleValues=1;
 int toggleMode=0;
-int th=0; //azimuth view angle theta
-int ph=0; //elevation angle phi
-int fov= 55; //field of view
-int asp=1; // aspect ratio
+int th=0; /*! azimuth view angle theta */
+int ph=0; /*! elevation angle phi  */
+int fov= 55; /*! field of view */
+int asp=1; /*! aspect ratio */
 
-void project(){         /*To project the content on screen*/
+void project(){         /*! To project the content on screen*/
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 
@@ -44,7 +45,7 @@ void project(){         /*To project the content on screen*/
 	glLoadIdentity();
 }
 
-void drawAxes(){			/*Function to draw the Axes on Scree/Window*/
+void drawAxes(){			/*!Function to draw the Axes on Scree/Window*/
 	if(toggleAxes){
 		double len=2.0;
 		glColor3f(1.0,1.0,1.0);
@@ -59,7 +60,7 @@ void drawAxes(){			/*Function to draw the Axes on Scree/Window*/
 	}
 }
 
-void drawShape(){				/*Function to draw the object obtained after generating the wire frame*/
+void drawShape(){				/*! Function to draw the object obtained after generating the wire frame*/
     ifstream infile("testfile.txt");
     float x1,y1,z1,x2,y2,z2;
     while(infile>>x1>>y1>>z1>>x2>>y2>>z2){
@@ -71,7 +72,7 @@ void drawShape(){				/*Function to draw the object obtained after generating the
     }
 }
 
-void display(){					/*Function to display the contents on the screens*/
+void display(){					/*! Function to display the contents on the screens*/
 	glClear(GL_COLOR_BUFFER_BIT| GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
     glLoadIdentity();
@@ -96,14 +97,14 @@ void display(){					/*Function to display the contents on the screens*/
 
 
 
-void reshape(int width,int height){				/*Function to reshape the objects displayed on screen*/
+void reshape(int width,int height){				/*! Function to reshape the objects displayed on screen*/
 	asp=(height>0)? (double)width/height :1;
 	glViewport(0,0,width,height);
 	project();
 }
 
-void windowKey(unsigned char key, int x, int y){			/*Function to which maps operations to keys input*/
-	/*Keys:-
+void windowKey(unsigned char key, int x, int y){			/*! Function to which maps operations to keys input*/
+	/*! Keys:-
 		Esc     -    Exit
 		j		-	 ToggeleAxes
    		k       -    toggleValues
@@ -123,7 +124,7 @@ void windowKey(unsigned char key, int x, int y){			/*Function to which maps oper
 	glutPostRedisplay();
 }
 
-void windowSpecial(int key,int x,int y){				/*Function to map operations to Special Keys*/
+void windowSpecial(int key,int x,int y){				/*! Function to map operations to Special Keys*/
 	if(key==GLUT_KEY_RIGHT) th+=5;
 	else if(key==GLUT_KEY_LEFT) th-=5;
 	else if(key==GLUT_KEY_UP) ph+=5;
@@ -136,7 +137,7 @@ void windowSpecial(int key,int x,int y){				/*Function to map operations to Spec
 }
 
 
-void WindowMenu(int val){				/*Function to initialise menu*/
+void WindowMenu(int val){				/*! Function to initialise menu*/
 	windowKey((unsigned char)val,0,0);
 }
 

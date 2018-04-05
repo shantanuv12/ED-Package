@@ -1,0 +1,480 @@
+\hypertarget{final_8h}{}\section{3D to 2\+D/include/final.h File Reference}
+\label{final_8h}\index{3\+D to 2\+D/include/final.\+h@{3\+D to 2\+D/include/final.\+h}}
+{\ttfamily \#include $<$G\+L/glut.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}line3\+D.\+h\char`\"{}}\newline
+Include dependency graph for final.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{final_8h_a598a3330b3c21701223ee0ca14316eca}{PI}}~3.\+1415926535898 /$\ast$! Defining Pi $\ast$/
+\item 
+\#define \mbox{\hyperlink{final_8h_af23b6aef79e50bfd29fd5b763acb8f99}{Cos}}(t)~cos(\mbox{\hyperlink{final_8h_a598a3330b3c21701223ee0ca14316eca}{PI}}/180$\ast$(t))
+\item 
+\#define \mbox{\hyperlink{final_8h_ae6bf810ec90b6fb97470397fac19bd26}{Sin}}(t)~sin(\mbox{\hyperlink{final_8h_a598a3330b3c21701223ee0ca14316eca}{PI}}/180$\ast$(t))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{final_8h_a81d5857ed4feef4a1d6f74f335832563}{project}} ()
+\item 
+void \mbox{\hyperlink{final_8h_a5cf8f277aca9c9b30baa6b6f2ce12660}{draw\+Axes}} ()
+\item 
+void \mbox{\hyperlink{final_8h_a63b5230e86ff1b3d58cfe70429fe4956}{reshape}} ()
+\item 
+void \mbox{\hyperlink{final_8h_a9a56edbe37ec950b30933515996b52da}{window\+Special}} ()
+\item 
+void \mbox{\hyperlink{final_8h_a89e57dedf29c45f0fb4081428a30d434}{add\+Line}} ()
+\item 
+void \mbox{\hyperlink{final_8h_ac1c42996dc041e89ab4b59a1611d98c4}{create\+Cube}} ()
+\item 
+void \mbox{\hyperlink{final_8h_a87035625ff69ce4c96e6f3537bb08c0c}{create\+Grid}} ()
+\item 
+void \mbox{\hyperlink{final_8h_adeab805e2f2a5b1a867cf40390b4a73b}{window\+Key}} (unsigned char key, int x, int y)
+\item 
+void \mbox{\hyperlink{final_8h_a785fb30b93cecc2827a258158027fe75}{Window\+Menu}} (int val)
+\item 
+void \mbox{\hyperlink{final_8h_a1e5b20fed15743656bb6d2e6a6ea6269}{display}} ()
+\item 
+void \mbox{\hyperlink{final_8h_acaf670ecb06ba917aa7a6629e52c98c2}{display\+Top}} ()
+\item 
+void \mbox{\hyperlink{final_8h_a52bfb2625e89fe017861bdcc34a95e0c}{display\+Side}} ()
+\item 
+void \mbox{\hyperlink{final_8h_a52595c4d3f8ea301b786db2fabe4baab}{display\+Front}} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{final_8h_af905a9989361d094908ad04e08f6429d}{cx}} =0
+\item 
+int \mbox{\hyperlink{final_8h_ad36501a70b25e18bcf48dd6e03392305}{cy}} =0
+\item 
+int \mbox{\hyperlink{final_8h_abe60747a0139954ef8def82af211b420}{cz}} =0
+\item 
+int \mbox{\hyperlink{final_8h_a60449ab6e3cc483a69bbe369ea9f5aa7}{cn}}
+\item 
+int \mbox{\hyperlink{final_8h_a6cebf5f34184e082168b8ef6c7151c44}{co}}
+\item 
+double \mbox{\hyperlink{final_8h_a8b1c561ddcd700c4c09dfb8e7c5f4e61}{dim}} =3.\+0
+\item 
+int \mbox{\hyperlink{final_8h_aa61000540636bfdc4c9f27045ab84ce9}{window\+Width}} =1920
+\item 
+int \mbox{\hyperlink{final_8h_af140802328ffe8a45749114b1c5a2056}{window\+Height}} =1080
+\item 
+int \mbox{\hyperlink{final_8h_a9effc1b29a94e47fd2c579675bd373fc}{toggle\+Axes}} =0
+\item 
+int \mbox{\hyperlink{final_8h_a63394c3b878b01eebcf1f7f0fafbfefc}{toggle\+Values}} =1
+\item 
+int \mbox{\hyperlink{final_8h_a4d030258650c3ffda64c0ba5b361d36d}{toggle\+Mode}} =0
+\item 
+int \mbox{\hyperlink{final_8h_a5ca53c6aa53a1c3649c7f047fe64e49b}{th}} =0
+\item 
+int \mbox{\hyperlink{final_8h_adce2757fdc16c92198dce58c74145b46}{ph}} =0
+\item 
+int \mbox{\hyperlink{final_8h_a0e2c6074b080f7edcb7ed453e39b005b}{fov}} =60
+\item 
+int \mbox{\hyperlink{final_8h_a2f193e1bfd9e37ca863d9445aa75e9f5}{asp}} =1
+\item 
+int \mbox{\hyperlink{final_8h_a65a86ba5bcf5f2d0f852e4d301164957}{viewgrid}} =0
+\item 
+int \mbox{\hyperlink{final_8h_ac261b45b6346e633de22d510c9f6a770}{front}} =0
+\item 
+int \mbox{\hyperlink{final_8h_af93f4f37fc2ad9c37af4a715423b110c}{top}} =0
+\item 
+int \mbox{\hyperlink{final_8h_a2d7431eddd5ca6d1ac206533ee0bad0e}{side}} =0
+\item 
+int \mbox{\hyperlink{final_8h_a328cd221e75f4bd92e3ccf406f0d0441}{object}} =1
+\item 
+\mbox{\hyperlink{struct_line}{Line}} \mbox{\hyperlink{final_8h_ac907fa48c3c2ff8d8587ace3357ab4a4}{l}} \mbox{[}1000\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{final_8h_af23b6aef79e50bfd29fd5b763acb8f99}\label{final_8h_af23b6aef79e50bfd29fd5b763acb8f99}} 
+\index{final.\+h@{final.\+h}!Cos@{Cos}}
+\index{Cos@{Cos}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{Cos}{Cos}}
+{\footnotesize\ttfamily \#define Cos(\begin{DoxyParamCaption}\item[{}]{t }\end{DoxyParamCaption})~cos(\mbox{\hyperlink{final_8h_a598a3330b3c21701223ee0ca14316eca}{PI}}/180$\ast$(t))}
+
+
+
+Definition at line 11 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_a598a3330b3c21701223ee0ca14316eca}\label{final_8h_a598a3330b3c21701223ee0ca14316eca}} 
+\index{final.\+h@{final.\+h}!PI@{PI}}
+\index{PI@{PI}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily \#define PI~3.\+1415926535898 /$\ast$! Defining Pi $\ast$/}
+
+Header file containing all the function and global variables and Libraries used to make 3D drawing and projections 
+
+Definition at line 10 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_ae6bf810ec90b6fb97470397fac19bd26}\label{final_8h_ae6bf810ec90b6fb97470397fac19bd26}} 
+\index{final.\+h@{final.\+h}!Sin@{Sin}}
+\index{Sin@{Sin}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{Sin}{Sin}}
+{\footnotesize\ttfamily \#define Sin(\begin{DoxyParamCaption}\item[{}]{t }\end{DoxyParamCaption})~sin(\mbox{\hyperlink{final_8h_a598a3330b3c21701223ee0ca14316eca}{PI}}/180$\ast$(t))}
+
+
+
+Definition at line 12 of file final.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{final_8h_a89e57dedf29c45f0fb4081428a30d434}\label{final_8h_a89e57dedf29c45f0fb4081428a30d434}} 
+\index{final.\+h@{final.\+h}!add\+Line@{add\+Line}}
+\index{add\+Line@{add\+Line}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{add\+Line()}{addLine()}}
+{\footnotesize\ttfamily void add\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to add Lines to the \mbox{\hyperlink{struct_line}{Line}} Data Structure 
+
+Definition at line 54 of file final.\+cpp.
+
+\mbox{\Hypertarget{final_8h_ac1c42996dc041e89ab4b59a1611d98c4}\label{final_8h_ac1c42996dc041e89ab4b59a1611d98c4}} 
+\index{final.\+h@{final.\+h}!create\+Cube@{create\+Cube}}
+\index{create\+Cube@{create\+Cube}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{create\+Cube()}{createCube()}}
+{\footnotesize\ttfamily void create\+Cube (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to draw the pointer/cube used to draw objects on screen 
+
+Definition at line 103 of file final.\+cpp.
+
+\mbox{\Hypertarget{final_8h_a87035625ff69ce4c96e6f3537bb08c0c}\label{final_8h_a87035625ff69ce4c96e6f3537bb08c0c}} 
+\index{final.\+h@{final.\+h}!create\+Grid@{create\+Grid}}
+\index{create\+Grid@{create\+Grid}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{create\+Grid()}{createGrid()}}
+{\footnotesize\ttfamily void create\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to create 3D grid 
+
+Definition at line 111 of file final.\+cpp.
+
+\mbox{\Hypertarget{final_8h_a1e5b20fed15743656bb6d2e6a6ea6269}\label{final_8h_a1e5b20fed15743656bb6d2e6a6ea6269}} 
+\index{final.\+h@{final.\+h}!display@{display}}
+\index{display@{display}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to display the contents on the screens
+
+Function to display the contents of the window on screen 
+
+Definition at line 75 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{final_8h_a52595c4d3f8ea301b786db2fabe4baab}\label{final_8h_a52595c4d3f8ea301b786db2fabe4baab}} 
+\index{final.\+h@{final.\+h}!display\+Front@{display\+Front}}
+\index{display\+Front@{display\+Front}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{display\+Front()}{displayFront()}}
+{\footnotesize\ttfamily void display\+Front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to display Front View 
+
+Definition at line 73 of file final.\+cpp.
+
+\mbox{\Hypertarget{final_8h_a52bfb2625e89fe017861bdcc34a95e0c}\label{final_8h_a52bfb2625e89fe017861bdcc34a95e0c}} 
+\index{final.\+h@{final.\+h}!display\+Side@{display\+Side}}
+\index{display\+Side@{display\+Side}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{display\+Side()}{displaySide()}}
+{\footnotesize\ttfamily void display\+Side (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to display Side view 
+
+Definition at line 93 of file final.\+cpp.
+
+\mbox{\Hypertarget{final_8h_acaf670ecb06ba917aa7a6629e52c98c2}\label{final_8h_acaf670ecb06ba917aa7a6629e52c98c2}} 
+\index{final.\+h@{final.\+h}!display\+Top@{display\+Top}}
+\index{display\+Top@{display\+Top}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{display\+Top()}{displayTop()}}
+{\footnotesize\ttfamily void display\+Top (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to display Top View 
+
+Definition at line 83 of file final.\+cpp.
+
+\mbox{\Hypertarget{final_8h_a5cf8f277aca9c9b30baa6b6f2ce12660}\label{final_8h_a5cf8f277aca9c9b30baa6b6f2ce12660}} 
+\index{final.\+h@{final.\+h}!draw\+Axes@{draw\+Axes}}
+\index{draw\+Axes@{draw\+Axes}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{draw\+Axes()}{drawAxes()}}
+{\footnotesize\ttfamily void draw\+Axes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to draw the Axes on Scree/\+Window
+
+Function to draw the 3 orthogonal Axes on the Open\+GL Window 
+
+Definition at line 48 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{final_8h_a81d5857ed4feef4a1d6f74f335832563}\label{final_8h_a81d5857ed4feef4a1d6f74f335832563}} 
+\index{final.\+h@{final.\+h}!project@{project}}
+\index{project@{project}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{project()}{project()}}
+{\footnotesize\ttfamily void project (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+to view object
+
+aspect ratio To project the content on screen
+
+Function to project the view on the screen 
+
+Definition at line 31 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{final_8h_a63b5230e86ff1b3d58cfe70429fe4956}\label{final_8h_a63b5230e86ff1b3d58cfe70429fe4956}} 
+\index{final.\+h@{final.\+h}!reshape@{reshape}}
+\index{reshape@{reshape}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{reshape()}{reshape()}}
+{\footnotesize\ttfamily void reshape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{final_8h_adeab805e2f2a5b1a867cf40390b4a73b}\label{final_8h_adeab805e2f2a5b1a867cf40390b4a73b}} 
+\index{final.\+h@{final.\+h}!window\+Key@{window\+Key}}
+\index{window\+Key@{window\+Key}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{window\+Key()}{windowKey()}}
+{\footnotesize\ttfamily void window\+Key (\begin{DoxyParamCaption}\item[{unsigned char}]{key,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Function to which maps operations to keys input
+
+Keys\+:-\/ Esc -\/ Exit j -\/ Toggele\+Axes k -\/ toggle\+Values l -\/ toggle\+Mode u \& i -\/ change field of view o \& p -\/ change dim
+
+Function for actions using Window\+Keys ~\newline
+ Keys\+:-\/ Esc -\/ Exit j -\/ Toggele\+Axes k -\/ toggle\+Values l -\/ toggle\+Mode u \& i -\/ change field of view o \& p -\/ change dim w,a,z,s,d,q-\/ change the pointer g -\/ viewgrid \mbox{[} -\/ create/draw Lines r,t,y,e -\/ display f,t,s, object views resp \mbox{]} -\/ reset the pointer
+
+Definition at line 106 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{final_8h_a785fb30b93cecc2827a258158027fe75}\label{final_8h_a785fb30b93cecc2827a258158027fe75}} 
+\index{final.\+h@{final.\+h}!Window\+Menu@{Window\+Menu}}
+\index{Window\+Menu@{Window\+Menu}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{Window\+Menu()}{WindowMenu()}}
+{\footnotesize\ttfamily void Window\+Menu (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})}
+
+Function to initialise menu
+
+Function to display Menu 
+
+Definition at line 140 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{final_8h_a9a56edbe37ec950b30933515996b52da}\label{final_8h_a9a56edbe37ec950b30933515996b52da}} 
+\index{final.\+h@{final.\+h}!window\+Special@{window\+Special}}
+\index{window\+Special@{window\+Special}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{window\+Special()}{windowSpecial()}}
+{\footnotesize\ttfamily void window\+Special (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{final_8h_a2f193e1bfd9e37ca863d9445aa75e9f5}\label{final_8h_a2f193e1bfd9e37ca863d9445aa75e9f5}} 
+\index{final.\+h@{final.\+h}!asp@{asp}}
+\index{asp@{asp}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{asp}{asp}}
+{\footnotesize\ttfamily int asp =1}
+
+field of view 
+
+Definition at line 26 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_a60449ab6e3cc483a69bbe369ea9f5aa7}\label{final_8h_a60449ab6e3cc483a69bbe369ea9f5aa7}} 
+\index{final.\+h@{final.\+h}!cn@{cn}}
+\index{cn@{cn}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{cn}{cn}}
+{\footnotesize\ttfamily int cn}
+
+Variables for position of pointer 
+
+Definition at line 15 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_a6cebf5f34184e082168b8ef6c7151c44}\label{final_8h_a6cebf5f34184e082168b8ef6c7151c44}} 
+\index{final.\+h@{final.\+h}!co@{co}}
+\index{co@{co}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{co}{co}}
+{\footnotesize\ttfamily int co}
+
+
+
+Definition at line 15 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_af905a9989361d094908ad04e08f6429d}\label{final_8h_af905a9989361d094908ad04e08f6429d}} 
+\index{final.\+h@{final.\+h}!cx@{cx}}
+\index{cx@{cx}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{cx}{cx}}
+{\footnotesize\ttfamily int cx =0}
+
+
+
+Definition at line 14 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_ad36501a70b25e18bcf48dd6e03392305}\label{final_8h_ad36501a70b25e18bcf48dd6e03392305}} 
+\index{final.\+h@{final.\+h}!cy@{cy}}
+\index{cy@{cy}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{cy}{cy}}
+{\footnotesize\ttfamily int cy =0}
+
+
+
+Definition at line 14 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_abe60747a0139954ef8def82af211b420}\label{final_8h_abe60747a0139954ef8def82af211b420}} 
+\index{final.\+h@{final.\+h}!cz@{cz}}
+\index{cz@{cz}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{cz}{cz}}
+{\footnotesize\ttfamily int cz =0}
+
+
+
+Definition at line 14 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_a8b1c561ddcd700c4c09dfb8e7c5f4e61}\label{final_8h_a8b1c561ddcd700c4c09dfb8e7c5f4e61}} 
+\index{final.\+h@{final.\+h}!dim@{dim}}
+\index{dim@{dim}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{dim}{dim}}
+{\footnotesize\ttfamily double dim =3.\+0}
+
+Helper variable for counting number of line/edges 
+
+Definition at line 16 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_a0e2c6074b080f7edcb7ed453e39b005b}\label{final_8h_a0e2c6074b080f7edcb7ed453e39b005b}} 
+\index{final.\+h@{final.\+h}!fov@{fov}}
+\index{fov@{fov}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{fov}{fov}}
+{\footnotesize\ttfamily int fov =60}
+
+elevation angle phi 
+
+Definition at line 25 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_ac261b45b6346e633de22d510c9f6a770}\label{final_8h_ac261b45b6346e633de22d510c9f6a770}} 
+\index{final.\+h@{final.\+h}!front@{front}}
+\index{front@{front}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{front}{front}}
+{\footnotesize\ttfamily int front =0}
+
+to view the grid 
+
+Definition at line 28 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_ac907fa48c3c2ff8d8587ace3357ab4a4}\label{final_8h_ac907fa48c3c2ff8d8587ace3357ab4a4}} 
+\index{final.\+h@{final.\+h}!l@{l}}
+\index{l@{l}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{l}{l}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_line}{Line}} l\mbox{[}1000\mbox{]}}
+
+
+
+Definition at line 37 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_a328cd221e75f4bd92e3ccf406f0d0441}\label{final_8h_a328cd221e75f4bd92e3ccf406f0d0441}} 
+\index{final.\+h@{final.\+h}!object@{object}}
+\index{object@{object}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{object}{object}}
+{\footnotesize\ttfamily int object =1}
+
+to view side view 
+
+Definition at line 31 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_adce2757fdc16c92198dce58c74145b46}\label{final_8h_adce2757fdc16c92198dce58c74145b46}} 
+\index{final.\+h@{final.\+h}!ph@{ph}}
+\index{ph@{ph}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{ph}{ph}}
+{\footnotesize\ttfamily int ph =0}
+
+azimuth view angle theta 
+
+Definition at line 24 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_a2d7431eddd5ca6d1ac206533ee0bad0e}\label{final_8h_a2d7431eddd5ca6d1ac206533ee0bad0e}} 
+\index{final.\+h@{final.\+h}!side@{side}}
+\index{side@{side}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{side}{side}}
+{\footnotesize\ttfamily int side =0}
+
+to view top view 
+
+Definition at line 30 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_a5ca53c6aa53a1c3649c7f047fe64e49b}\label{final_8h_a5ca53c6aa53a1c3649c7f047fe64e49b}} 
+\index{final.\+h@{final.\+h}!th@{th}}
+\index{th@{th}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{th}{th}}
+{\footnotesize\ttfamily int th =0}
+
+
+
+Definition at line 23 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_a9effc1b29a94e47fd2c579675bd373fc}\label{final_8h_a9effc1b29a94e47fd2c579675bd373fc}} 
+\index{final.\+h@{final.\+h}!toggle\+Axes@{toggle\+Axes}}
+\index{toggle\+Axes@{toggle\+Axes}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{toggle\+Axes}{toggleAxes}}
+{\footnotesize\ttfamily int toggle\+Axes =0}
+
+Setting window Height 
+
+Definition at line 20 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_a4d030258650c3ffda64c0ba5b361d36d}\label{final_8h_a4d030258650c3ffda64c0ba5b361d36d}} 
+\index{final.\+h@{final.\+h}!toggle\+Mode@{toggle\+Mode}}
+\index{toggle\+Mode@{toggle\+Mode}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{toggle\+Mode}{toggleMode}}
+{\footnotesize\ttfamily int toggle\+Mode =0}
+
+
+
+Definition at line 22 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_a63394c3b878b01eebcf1f7f0fafbfefc}\label{final_8h_a63394c3b878b01eebcf1f7f0fafbfefc}} 
+\index{final.\+h@{final.\+h}!toggle\+Values@{toggle\+Values}}
+\index{toggle\+Values@{toggle\+Values}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{toggle\+Values}{toggleValues}}
+{\footnotesize\ttfamily int toggle\+Values =1}
+
+
+
+Definition at line 21 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_af93f4f37fc2ad9c37af4a715423b110c}\label{final_8h_af93f4f37fc2ad9c37af4a715423b110c}} 
+\index{final.\+h@{final.\+h}!top@{top}}
+\index{top@{top}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{top}{top}}
+{\footnotesize\ttfamily int top =0}
+
+to view frontview 
+
+Definition at line 29 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_a65a86ba5bcf5f2d0f852e4d301164957}\label{final_8h_a65a86ba5bcf5f2d0f852e4d301164957}} 
+\index{final.\+h@{final.\+h}!viewgrid@{viewgrid}}
+\index{viewgrid@{viewgrid}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{viewgrid}{viewgrid}}
+{\footnotesize\ttfamily int viewgrid =0}
+
+aspect ratio 
+
+Definition at line 27 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_af140802328ffe8a45749114b1c5a2056}\label{final_8h_af140802328ffe8a45749114b1c5a2056}} 
+\index{final.\+h@{final.\+h}!window\+Height@{window\+Height}}
+\index{window\+Height@{window\+Height}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{window\+Height}{windowHeight}}
+{\footnotesize\ttfamily int window\+Height =1080}
+
+Setting window Width 
+
+Definition at line 18 of file final.\+h.
+
+\mbox{\Hypertarget{final_8h_aa61000540636bfdc4c9f27045ab84ce9}\label{final_8h_aa61000540636bfdc4c9f27045ab84ce9}} 
+\index{final.\+h@{final.\+h}!window\+Width@{window\+Width}}
+\index{window\+Width@{window\+Width}!final.\+h@{final.\+h}}
+\subsubsection{\texorpdfstring{window\+Width}{windowWidth}}
+{\footnotesize\ttfamily int window\+Width =1920}
+
+Setting the view to 3D 
+
+Definition at line 17 of file final.\+h.
+

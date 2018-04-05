@@ -1,0 +1,58 @@
+\hypertarget{print_8h}{}\section{2D to 3\+D/include/print.h File Reference}
+\label{print_8h}\index{2\+D to 3\+D/include/print.\+h@{2\+D to 3\+D/include/print.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{print_8h_adbbe6b8b161d80dea71e81981b094c13}{printv}} (va\+\_\+list args, const char $\ast$format)
+\item 
+void \mbox{\hyperlink{print_8h_a6483da854ca8076e0b947adaf1668954}{print}} (const char $\ast$format,...)
+\item 
+void \mbox{\hyperlink{print_8h_add7f1378cfd2e92cfe599245ce85f4c1}{print\+At}} (int x, int y, const char $\ast$format,...)
+\item 
+void \mbox{\hyperlink{print_8h_ad91144446d5f7b412e5d971ab601f6ff}{err\+Check}} (char $\ast$where)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{print_8h_ad91144446d5f7b412e5d971ab601f6ff}\label{print_8h_ad91144446d5f7b412e5d971ab601f6ff}} 
+\index{print.\+h@{print.\+h}!err\+Check@{err\+Check}}
+\index{err\+Check@{err\+Check}!print.\+h@{print.\+h}}
+\subsubsection{\texorpdfstring{err\+Check()}{errCheck()}}
+{\footnotesize\ttfamily void err\+Check (\begin{DoxyParamCaption}\item[{char $\ast$}]{where }\end{DoxyParamCaption})}
+
+Convenience method to print out Open\+GL errors to stderr
+
+Definition at line 35 of file print.\+c.
+
+\mbox{\Hypertarget{print_8h_a6483da854ca8076e0b947adaf1668954}\label{print_8h_a6483da854ca8076e0b947adaf1668954}} 
+\index{print.\+h@{print.\+h}!print@{print}}
+\index{print@{print}!print.\+h@{print.\+h}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void print (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Function to print the character at screen 
+
+Definition at line 16 of file print.\+c.
+
+\mbox{\Hypertarget{print_8h_add7f1378cfd2e92cfe599245ce85f4c1}\label{print_8h_add7f1378cfd2e92cfe599245ce85f4c1}} 
+\index{print.\+h@{print.\+h}!print\+At@{print\+At}}
+\index{print\+At@{print\+At}!print.\+h@{print.\+h}}
+\subsubsection{\texorpdfstring{print\+At()}{printAt()}}
+{\footnotesize\ttfamily void print\+At (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Function to point at position at which we are displaying the character 
+
+Definition at line 25 of file print.\+c.
+
+\mbox{\Hypertarget{print_8h_adbbe6b8b161d80dea71e81981b094c13}\label{print_8h_adbbe6b8b161d80dea71e81981b094c13}} 
+\index{print.\+h@{print.\+h}!printv@{printv}}
+\index{printv@{printv}!print.\+h@{print.\+h}}
+\subsubsection{\texorpdfstring{printv()}{printv()}}
+{\footnotesize\ttfamily void printv (\begin{DoxyParamCaption}\item[{va\+\_\+list}]{args,  }\item[{const char $\ast$}]{format }\end{DoxyParamCaption})}
+
+Header file containing all the functions required for printing data on screen for Open\+GL Windows Function to give the value which we have to print on screen 
+
+Definition at line 6 of file print.\+c.
+

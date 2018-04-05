@@ -1,0 +1,297 @@
+\hypertarget{reconstruct_8cpp}{}\section{2D to 3\+D/src/reconstruct.cpp File Reference}
+\label{reconstruct_8cpp}\index{2\+D to 3\+D/src/reconstruct.\+cpp@{2\+D to 3\+D/src/reconstruct.\+cpp}}
+{\ttfamily \#include \char`\"{}wireframe.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$G\+L/glut.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}screencasts.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}print.\+h\char`\"{}}\newline
+Include dependency graph for reconstruct.\+cpp\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{reconstruct_8cpp_a598a3330b3c21701223ee0ca14316eca}{PI}}~3.\+1415926535898 /$\ast$! Defining Pi $\ast$/
+\item 
+\#define \mbox{\hyperlink{reconstruct_8cpp_af23b6aef79e50bfd29fd5b763acb8f99}{Cos}}(t)~cos(\mbox{\hyperlink{final_8h_a598a3330b3c21701223ee0ca14316eca}{PI}}/180$\ast$(t))
+\item 
+\#define \mbox{\hyperlink{reconstruct_8cpp_ae6bf810ec90b6fb97470397fac19bd26}{Sin}}(t)~sin(\mbox{\hyperlink{final_8h_a598a3330b3c21701223ee0ca14316eca}{PI}}/180$\ast$(t))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{reconstruct_8cpp_a81d5857ed4feef4a1d6f74f335832563}{project}} ()
+\item 
+void \mbox{\hyperlink{reconstruct_8cpp_a5cf8f277aca9c9b30baa6b6f2ce12660}{draw\+Axes}} ()
+\item 
+void \mbox{\hyperlink{reconstruct_8cpp_a486704d66f8064c937eb53439af798cc}{draw\+Shape}} ()
+\item 
+void \mbox{\hyperlink{reconstruct_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}{display}} ()
+\item 
+void \mbox{\hyperlink{reconstruct_8cpp_a6819355374dd277347abd7c4235f0cd7}{reshape}} (int width, int height)
+\item 
+void \mbox{\hyperlink{reconstruct_8cpp_adeab805e2f2a5b1a867cf40390b4a73b}{window\+Key}} (unsigned char key, int x, int y)
+\item 
+void \mbox{\hyperlink{reconstruct_8cpp_a231a70bdc7178ea1ca0dd1b93bda1818}{window\+Special}} (int key, int x, int y)
+\item 
+void \mbox{\hyperlink{reconstruct_8cpp_a785fb30b93cecc2827a258158027fe75}{Window\+Menu}} (int val)
+\item 
+int \mbox{\hyperlink{reconstruct_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{reconstruct_8cpp_a8b1c561ddcd700c4c09dfb8e7c5f4e61}{dim}} =3.\+0
+\item 
+int \mbox{\hyperlink{reconstruct_8cpp_aa61000540636bfdc4c9f27045ab84ce9}{window\+Width}} =1280
+\item 
+int \mbox{\hyperlink{reconstruct_8cpp_af140802328ffe8a45749114b1c5a2056}{window\+Height}} =1280
+\item 
+int \mbox{\hyperlink{reconstruct_8cpp_a9effc1b29a94e47fd2c579675bd373fc}{toggle\+Axes}} =0
+\item 
+int \mbox{\hyperlink{reconstruct_8cpp_a63394c3b878b01eebcf1f7f0fafbfefc}{toggle\+Values}} =1
+\item 
+int \mbox{\hyperlink{reconstruct_8cpp_a4d030258650c3ffda64c0ba5b361d36d}{toggle\+Mode}} =0
+\item 
+int \mbox{\hyperlink{reconstruct_8cpp_a5ca53c6aa53a1c3649c7f047fe64e49b}{th}} =0
+\item 
+int \mbox{\hyperlink{reconstruct_8cpp_adce2757fdc16c92198dce58c74145b46}{ph}} =0
+\item 
+int \mbox{\hyperlink{reconstruct_8cpp_a0e2c6074b080f7edcb7ed453e39b005b}{fov}} = 55
+\item 
+int \mbox{\hyperlink{reconstruct_8cpp_a2f193e1bfd9e37ca863d9445aa75e9f5}{asp}} =1
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{reconstruct_8cpp_af23b6aef79e50bfd29fd5b763acb8f99}\label{reconstruct_8cpp_af23b6aef79e50bfd29fd5b763acb8f99}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!Cos@{Cos}}
+\index{Cos@{Cos}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{Cos}{Cos}}
+{\footnotesize\ttfamily \#define Cos(\begin{DoxyParamCaption}\item[{}]{t }\end{DoxyParamCaption})~cos(\mbox{\hyperlink{final_8h_a598a3330b3c21701223ee0ca14316eca}{PI}}/180$\ast$(t))}
+
+
+
+Definition at line 16 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_a598a3330b3c21701223ee0ca14316eca}\label{reconstruct_8cpp_a598a3330b3c21701223ee0ca14316eca}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!PI@{PI}}
+\index{PI@{PI}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily \#define PI~3.\+1415926535898 /$\ast$! Defining Pi $\ast$/}
+
+
+
+Definition at line 15 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_ae6bf810ec90b6fb97470397fac19bd26}\label{reconstruct_8cpp_ae6bf810ec90b6fb97470397fac19bd26}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!Sin@{Sin}}
+\index{Sin@{Sin}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{Sin}{Sin}}
+{\footnotesize\ttfamily \#define Sin(\begin{DoxyParamCaption}\item[{}]{t }\end{DoxyParamCaption})~sin(\mbox{\hyperlink{final_8h_a598a3330b3c21701223ee0ca14316eca}{PI}}/180$\ast$(t))}
+
+
+
+Definition at line 17 of file reconstruct.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{reconstruct_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}\label{reconstruct_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!display@{display}}
+\index{display@{display}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to display the contents on the screens 
+
+Definition at line 75 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_a5cf8f277aca9c9b30baa6b6f2ce12660}\label{reconstruct_8cpp_a5cf8f277aca9c9b30baa6b6f2ce12660}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!draw\+Axes@{draw\+Axes}}
+\index{draw\+Axes@{draw\+Axes}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{draw\+Axes()}{drawAxes()}}
+{\footnotesize\ttfamily void draw\+Axes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to draw the Axes on Scree/\+Window 
+
+Definition at line 48 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_a486704d66f8064c937eb53439af798cc}\label{reconstruct_8cpp_a486704d66f8064c937eb53439af798cc}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!draw\+Shape@{draw\+Shape}}
+\index{draw\+Shape@{draw\+Shape}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{draw\+Shape()}{drawShape()}}
+{\footnotesize\ttfamily void draw\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to draw the object obtained after generating the wire frame 
+
+Definition at line 63 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{reconstruct_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!main@{main}}
+\index{main@{main}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 145 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_a81d5857ed4feef4a1d6f74f335832563}\label{reconstruct_8cpp_a81d5857ed4feef4a1d6f74f335832563}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!project@{project}}
+\index{project@{project}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{project()}{project()}}
+{\footnotesize\ttfamily void project (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+aspect ratio To project the content on screen 
+
+Definition at line 31 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_a6819355374dd277347abd7c4235f0cd7}\label{reconstruct_8cpp_a6819355374dd277347abd7c4235f0cd7}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!reshape@{reshape}}
+\index{reshape@{reshape}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{reshape()}{reshape()}}
+{\footnotesize\ttfamily void reshape (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+Function to reshape the objects displayed on screen 
+
+Definition at line 100 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_adeab805e2f2a5b1a867cf40390b4a73b}\label{reconstruct_8cpp_adeab805e2f2a5b1a867cf40390b4a73b}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!window\+Key@{window\+Key}}
+\index{window\+Key@{window\+Key}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{window\+Key()}{windowKey()}}
+{\footnotesize\ttfamily void window\+Key (\begin{DoxyParamCaption}\item[{unsigned char}]{key,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Function to which maps operations to keys input
+
+Keys\+:-\/ Esc -\/ Exit j -\/ Toggele\+Axes k -\/ toggle\+Values l -\/ toggle\+Mode u \& i -\/ change field of view o \& p -\/ change dim
+
+Definition at line 106 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_a785fb30b93cecc2827a258158027fe75}\label{reconstruct_8cpp_a785fb30b93cecc2827a258158027fe75}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!Window\+Menu@{Window\+Menu}}
+\index{Window\+Menu@{Window\+Menu}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{Window\+Menu()}{WindowMenu()}}
+{\footnotesize\ttfamily void Window\+Menu (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})}
+
+Function to initialise menu 
+
+Definition at line 140 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_a231a70bdc7178ea1ca0dd1b93bda1818}\label{reconstruct_8cpp_a231a70bdc7178ea1ca0dd1b93bda1818}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!window\+Special@{window\+Special}}
+\index{window\+Special@{window\+Special}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{window\+Special()}{windowSpecial()}}
+{\footnotesize\ttfamily void window\+Special (\begin{DoxyParamCaption}\item[{int}]{key,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Function to map operations to Special Keys 
+
+Definition at line 127 of file reconstruct.\+cpp.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{reconstruct_8cpp_a2f193e1bfd9e37ca863d9445aa75e9f5}\label{reconstruct_8cpp_a2f193e1bfd9e37ca863d9445aa75e9f5}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!asp@{asp}}
+\index{asp@{asp}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{asp}{asp}}
+{\footnotesize\ttfamily int asp =1}
+
+field of view 
+
+Definition at line 29 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_a8b1c561ddcd700c4c09dfb8e7c5f4e61}\label{reconstruct_8cpp_a8b1c561ddcd700c4c09dfb8e7c5f4e61}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!dim@{dim}}
+\index{dim@{dim}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{dim}{dim}}
+{\footnotesize\ttfamily double dim =3.\+0}
+
+
+
+Definition at line 19 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_a0e2c6074b080f7edcb7ed453e39b005b}\label{reconstruct_8cpp_a0e2c6074b080f7edcb7ed453e39b005b}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!fov@{fov}}
+\index{fov@{fov}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{fov}{fov}}
+{\footnotesize\ttfamily int fov = 55}
+
+elevation angle phi 
+
+Definition at line 28 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_adce2757fdc16c92198dce58c74145b46}\label{reconstruct_8cpp_adce2757fdc16c92198dce58c74145b46}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!ph@{ph}}
+\index{ph@{ph}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{ph}{ph}}
+{\footnotesize\ttfamily int ph =0}
+
+azimuth view angle theta 
+
+Definition at line 27 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_a5ca53c6aa53a1c3649c7f047fe64e49b}\label{reconstruct_8cpp_a5ca53c6aa53a1c3649c7f047fe64e49b}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!th@{th}}
+\index{th@{th}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{th}{th}}
+{\footnotesize\ttfamily int th =0}
+
+
+
+Definition at line 26 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_a9effc1b29a94e47fd2c579675bd373fc}\label{reconstruct_8cpp_a9effc1b29a94e47fd2c579675bd373fc}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!toggle\+Axes@{toggle\+Axes}}
+\index{toggle\+Axes@{toggle\+Axes}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{toggle\+Axes}{toggleAxes}}
+{\footnotesize\ttfamily int toggle\+Axes =0}
+
+Defining window\+Height 
+
+Definition at line 23 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_a4d030258650c3ffda64c0ba5b361d36d}\label{reconstruct_8cpp_a4d030258650c3ffda64c0ba5b361d36d}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!toggle\+Mode@{toggle\+Mode}}
+\index{toggle\+Mode@{toggle\+Mode}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{toggle\+Mode}{toggleMode}}
+{\footnotesize\ttfamily int toggle\+Mode =0}
+
+
+
+Definition at line 25 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_a63394c3b878b01eebcf1f7f0fafbfefc}\label{reconstruct_8cpp_a63394c3b878b01eebcf1f7f0fafbfefc}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!toggle\+Values@{toggle\+Values}}
+\index{toggle\+Values@{toggle\+Values}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{toggle\+Values}{toggleValues}}
+{\footnotesize\ttfamily int toggle\+Values =1}
+
+
+
+Definition at line 24 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_af140802328ffe8a45749114b1c5a2056}\label{reconstruct_8cpp_af140802328ffe8a45749114b1c5a2056}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!window\+Height@{window\+Height}}
+\index{window\+Height@{window\+Height}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{window\+Height}{windowHeight}}
+{\footnotesize\ttfamily int window\+Height =1280}
+
+Defining window\+Width 
+
+Definition at line 21 of file reconstruct.\+cpp.
+
+\mbox{\Hypertarget{reconstruct_8cpp_aa61000540636bfdc4c9f27045ab84ce9}\label{reconstruct_8cpp_aa61000540636bfdc4c9f27045ab84ce9}} 
+\index{reconstruct.\+cpp@{reconstruct.\+cpp}!window\+Width@{window\+Width}}
+\index{window\+Width@{window\+Width}!reconstruct.\+cpp@{reconstruct.\+cpp}}
+\subsubsection{\texorpdfstring{window\+Width}{windowWidth}}
+{\footnotesize\ttfamily int window\+Width =1280}
+
+
+
+Definition at line 20 of file reconstruct.\+cpp.
+

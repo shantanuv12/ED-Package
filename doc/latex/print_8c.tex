@@ -1,0 +1,77 @@
+\hypertarget{print_8c}{}\section{2D to 3\+D/src/print.c File Reference}
+\label{print_8c}\index{2\+D to 3\+D/src/print.\+c@{2\+D to 3\+D/src/print.\+c}}
+{\ttfamily \#include \char`\"{}screencasts.\+h\char`\"{}}\newline
+Include dependency graph for print.\+c\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{print_8c_a05b49c662c073f89e86804f7856622a0}{L\+EN}}~8192	/$\ast$! Maximum length of the characters which we can \mbox{\hyperlink{print_8c_a6483da854ca8076e0b947adaf1668954}{print}} $\ast$/
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{print_8c_adbbe6b8b161d80dea71e81981b094c13}{printv}} (va\+\_\+list args, const char $\ast$format)
+\item 
+void \mbox{\hyperlink{print_8c_a6483da854ca8076e0b947adaf1668954}{print}} (const char $\ast$format,...)
+\item 
+void \mbox{\hyperlink{print_8c_add7f1378cfd2e92cfe599245ce85f4c1}{print\+At}} (int x, int y, const char $\ast$format,...)
+\item 
+void \mbox{\hyperlink{print_8c_ad91144446d5f7b412e5d971ab601f6ff}{err\+Check}} (char $\ast$where)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{print_8c_a05b49c662c073f89e86804f7856622a0}\label{print_8c_a05b49c662c073f89e86804f7856622a0}} 
+\index{print.\+c@{print.\+c}!L\+EN@{L\+EN}}
+\index{L\+EN@{L\+EN}!print.\+c@{print.\+c}}
+\subsubsection{\texorpdfstring{L\+EN}{LEN}}
+{\footnotesize\ttfamily \#define L\+EN~8192	/$\ast$! Maximum length of the characters which we can \mbox{\hyperlink{print_8c_a6483da854ca8076e0b947adaf1668954}{print}} $\ast$/}
+
+Header file containing all the print functions to display items on Open\+GL Window 
+
+Definition at line 5 of file print.\+c.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{print_8c_ad91144446d5f7b412e5d971ab601f6ff}\label{print_8c_ad91144446d5f7b412e5d971ab601f6ff}} 
+\index{print.\+c@{print.\+c}!err\+Check@{err\+Check}}
+\index{err\+Check@{err\+Check}!print.\+c@{print.\+c}}
+\subsubsection{\texorpdfstring{err\+Check()}{errCheck()}}
+{\footnotesize\ttfamily void err\+Check (\begin{DoxyParamCaption}\item[{char $\ast$}]{where }\end{DoxyParamCaption})}
+
+Convenience method to print out Open\+GL errors to stderr
+
+Definition at line 35 of file print.\+c.
+
+\mbox{\Hypertarget{print_8c_a6483da854ca8076e0b947adaf1668954}\label{print_8c_a6483da854ca8076e0b947adaf1668954}} 
+\index{print.\+c@{print.\+c}!print@{print}}
+\index{print@{print}!print.\+c@{print.\+c}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void print (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Function to print the character at screen 
+
+Definition at line 16 of file print.\+c.
+
+\mbox{\Hypertarget{print_8c_add7f1378cfd2e92cfe599245ce85f4c1}\label{print_8c_add7f1378cfd2e92cfe599245ce85f4c1}} 
+\index{print.\+c@{print.\+c}!print\+At@{print\+At}}
+\index{print\+At@{print\+At}!print.\+c@{print.\+c}}
+\subsubsection{\texorpdfstring{print\+At()}{printAt()}}
+{\footnotesize\ttfamily void print\+At (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Function to point at position at which we are displaying the character 
+
+Definition at line 25 of file print.\+c.
+
+\mbox{\Hypertarget{print_8c_adbbe6b8b161d80dea71e81981b094c13}\label{print_8c_adbbe6b8b161d80dea71e81981b094c13}} 
+\index{print.\+c@{print.\+c}!printv@{printv}}
+\index{printv@{printv}!print.\+c@{print.\+c}}
+\subsubsection{\texorpdfstring{printv()}{printv()}}
+{\footnotesize\ttfamily void printv (\begin{DoxyParamCaption}\item[{va\+\_\+list}]{args,  }\item[{const char $\ast$}]{format }\end{DoxyParamCaption})}
+
+Header file containing all the functions required for printing data on screen for Open\+GL Windows Function to give the value which we have to print on screen 
+
+Definition at line 6 of file print.\+c.
+

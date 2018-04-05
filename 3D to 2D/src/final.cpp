@@ -1,6 +1,6 @@
 #include "final.h"
 using namespace std;
-void project(){                /*Function to project the view on the screen*/
+void project(){                /*! Function to project the view on the screen */
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 
@@ -17,7 +17,7 @@ void project(){                /*Function to project the view on the screen*/
 	glLoadIdentity();
 }
 
-void drawAxes(){				/*Function to draw the 3 orthogonal Axes on the OpenGL Window*/
+void drawAxes(){				/*! Function to draw the 3 orthogonal Axes on the OpenGL Window */
 	if(toggleAxes){
 		double len=2.0;
 		glColor3f(1.0,1.0,1.0);
@@ -32,13 +32,13 @@ void drawAxes(){				/*Function to draw the 3 orthogonal Axes on the OpenGL Windo
 	}
 }
 
-void reshape(int width,int height){   /*Function to rehape the contents of the OpenGL Window*/
+void reshape(int width,int height){   /*! Function to rehape the contents of the OpenGL Window */
 	asp=(height>0)? (double)width/height :1;
 	glViewport(0,0,width,height);
 	project();
 }
 
-void windowSpecial(int key,int x,int y){  /*Function to assign keys to rotate the contents of the window*/
+void windowSpecial(int key,int x,int y){  /*! Function to assign keys to rotate the contents of the window */
 	if(key==GLUT_KEY_RIGHT) th+=5;
 	else if(key==GLUT_KEY_LEFT) th-=5;
 	else if(key==GLUT_KEY_UP) ph+=5;
@@ -51,7 +51,7 @@ void windowSpecial(int key,int x,int y){  /*Function to assign keys to rotate th
 	glutPostRedisplay();
 }
 
-void addLine(){						/*Function to add Lines to the Line Data Structure*/
+void addLine(){						/*! Function to add Lines to the Line Data Structure */
 	l[0].state++;
 	if(l[0].state>2){ l[0].state=1;}
 	int st=l[0].state;
@@ -60,7 +60,7 @@ void addLine(){						/*Function to add Lines to the Line Data Structure*/
 	if(st==1 || st==2){ l[cn].x2=cx;l[cn].y2=cy;l[cn].z2=cz; }
 }
 
-void drawLines(){					/*Function used to dislay the lines represented by the line data structures*/
+void drawLines(){					/*! Function used to dislay the lines represented by the line data structures */
 	for(int i=1;i<l[0].total+1;i++){
 		glBegin(GL_LINES);
 		glColor3f(0,1,0);
@@ -70,7 +70,7 @@ void drawLines(){					/*Function used to dislay the lines represented by the lin
 	}
 }
 
-void displayFront(){					/*Function to display Front View*/
+void displayFront(){					/*! Function to display Front View */
 	for(int i=1;i<l[0].total+1;i++){
 		glBegin(GL_LINES);
 		glColor3f(1,0,0);
@@ -80,7 +80,7 @@ void displayFront(){					/*Function to display Front View*/
 	}
 }
 
-void displayTop(){					/*Function to display Top View*/
+void displayTop(){					/*! Function to display Top View */
 	for(int i=1;i<l[0].total+1;i++){
 		glBegin(GL_LINES);
 		glColor3f(0,0,1);
@@ -90,7 +90,7 @@ void displayTop(){					/*Function to display Top View*/
 	}
 }
 
-void displaySide(){					/*Function to display Side view*/
+void displaySide(){					/*! Function to display Side view*/
 	for(int i=1;i<l[0].total+1;i++){
 		glBegin(GL_LINES);
 		glColor3f(1,0,1);
@@ -100,7 +100,7 @@ void displaySide(){					/*Function to display Side view*/
 	}
 }
 
-void createCube(){					/*Function to draw the pointer/cube used to draw objects on screen*/
+void createCube(){					/*! Function to draw the pointer/cube used to draw objects on screen*/
 	glPushMatrix();
 	glColor3f(1,1,1);
 	glTranslatef(cx,cy,cz);
@@ -108,7 +108,7 @@ void createCube(){					/*Function to draw the pointer/cube used to draw objects 
 	glPopMatrix();
 }
 
-void createGrid(){					/*Function to create 3D grid */
+void createGrid(){					/*! Function to create 3D grid */
 	int i,j,k;
         for(i=0;i<40;i++){
                 glPushMatrix();
@@ -149,8 +149,8 @@ void createGrid(){					/*Function to create 3D grid */
 	}
 
 }
-void windowKey(unsigned char key, int x, int y){    /*Function for actions using WindowKeys*/
-	/*Keys:-
+void windowKey(unsigned char key, int x, int y){    /*! Function for actions using WindowKeys */
+	/*! Keys:-
 		Esc     -    Exit
 		j		-	 ToggeleAxes
    		k       -    toggleValues
@@ -187,12 +187,12 @@ void windowKey(unsigned char key, int x, int y){    /*Function for actions using
 	project();
 	glutPostRedisplay();
 }
-void WindowMenu(int val){    /*Function to display Menu*/
+void WindowMenu(int val){    /*! Function to display Menu */
 	windowKey((unsigned char)val,0,0);
 
 }
 
-void display(){					/*Function to display the contents of the window on screen*/
+void display(){					/*! Function to display the contents of the window on screen */
 	glClear(GL_COLOR_BUFFER_BIT| GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
     glLoadIdentity();
@@ -217,7 +217,7 @@ void display(){					/*Function to display the contents of the window on screen*/
 	glFlush();
 	glutSwapBuffers();
 }
-int main(int argc, char* argv[]){   /*Main function initialising the windows and performing necessary operations*/
+int main(int argc, char* argv[]){   /*! Main function initialising the windows and performing necessary operations */
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
 	glutInitWindowSize(windowWidth,windowHeight);
@@ -228,7 +228,7 @@ int main(int argc, char* argv[]){   /*Main function initialising the windows and
 	glutKeyboardFunc(windowKey);
 	glutSpecialFunc(windowSpecial);
 
-	glutCreateMenu(WindowMenu);      /*Created a menu which opens when we right click*/
+	glutCreateMenu(WindowMenu);      /*! Created a menu which opens when we right click */
 	glutAddMenuEntry("Toggle Axes [j]",'j');
 	glutAddMenuEntry("Toggle Values [k]",'k');
 	glutAddMenuEntry("Toggle Mode [l]",'l');

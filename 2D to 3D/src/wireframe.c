@@ -1,7 +1,7 @@
 #include "wireframe.h"
 int eds=1;
 void wire()
-{                                           /* Function that creates the wireframe of the input 2D orthographic views*/
+{                                           /*! Function that creates the wireframe of the input 2D orthographic views*/
 FILE *file=fopen("testfile.txt","w");
 vertex tv[100],fv[100],sv[100],p_vertex[400],temp1;
 edge  te[100],fe[100], se[100],p_edge[400],temp;
@@ -141,7 +141,7 @@ edge te[],p_edge[];
 edge fe;
 vertex sv[];
 {
-
+/*! Function to generate possible 3D edges and vertices from FView Edges TView Edges and SView Vertices*/
   edge temp;
   int i,j;
   for(i=1;i<=NOET;i++)
@@ -173,6 +173,7 @@ vertex sv[];
 void function_2(fe,se,te,p_edge)
 edge fe,se[],te[],p_edge[];
 {
+    /*! Function to generate possible 3D edges and vertices from FView Edges TView Edges and SView Edges*/
   int i,j;
   edge temp;
   for(i=1;i<=NOET;i++)
@@ -234,6 +235,7 @@ void function_3(fe,tv,se,p_edge)
 edge fe,se[],p_edge[];
 vertex tv[];
 {
+    /*! Function to generate possible 3D edges and vertices from FView Edges TView Vertices and SView Edges */
   int i,j;
   edge temp;
 for(j=1;j<=NOES;j++)
@@ -265,6 +267,7 @@ for(j=1;j<=NOES;j++)
 void function_4(fe,te,se,p_edge)
 edge fe,te[],se[],p_edge[];
 {
+    /*! Function to generate possible 3D edges and vertices from FView Edges TView Edges and SView Edges*/
   int i,j;
   edge temp;
   for(j=1;j<=NOES;j++)
@@ -324,6 +327,7 @@ edge fe,te[],se[],p_edge[];
 void function_5(fe,te,se,p_edge)
 edge fe,te[],se[],p_edge[];
 {
+    /*! Function to generate possible 3D edges and vertices from FView Edges TView Edges and SView Edges*/
   int i,j;
   edge temp;
   for(i=1;i<=NOET;i++)
@@ -380,6 +384,7 @@ edge fe,te[],se[],p_edge[];
 void function_6(fe,te,se,p_edge)
 edge fe,te[],se[],p_edge[];
 {
+    /*! Function to generate possible 3D edges and vertices from FView Edges TView Edges and SView Edges*/
   int i,j;
   edge temp;
   for(i=1;i<=NOET;i++)
@@ -438,6 +443,7 @@ void function_7(fv,te,se,p_edge)
 edge te[],se[],p_edge[];
 vertex fv;
 {
+    /*! Function to generate possible 3D edges and vertices from FView Vertices TView Edges and SView Vertices*/
   int i,j;
   edge temp;
   for(i=1;i<=NOET;i++)

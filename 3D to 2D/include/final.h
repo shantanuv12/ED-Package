@@ -1,4 +1,4 @@
-/*Header file containing all the function and global variables and Libraries used to make 3D drawing and projections*/
+/*! Header file containing all the function and global variables and Libraries used to make 3D drawing and projections */
 #ifndef FINAL_H
 #define FINAL_H
 
@@ -7,28 +7,28 @@
 #include <string.h>
 #include <iostream>
 #include "line3D.h"
-#define PI 3.1415926535898 // Defining Pi
+#define PI 3.1415926535898 /*! Defining Pi */
 #define Cos(t) cos(PI/180*(t))
 #define Sin(t) sin(PI/180*(t))
 
-int cx=0,cy=0,cz=0;
-int cn,co;
-double dim=3.0;
-int windowWidth=1920;
-int windowHeight=1080;
+int cx=0,cy=0,cz=0;		/*! Variables for position of pointer*/
+int cn,co;			/*! Helper variable for counting number of line/edges */
+double dim=3.0;			/*! Setting the view to 3D */
+int windowWidth=1920;		/*! Setting window Width */
+int windowHeight=1080;		/*! Setting window Height */
 
 int toggleAxes=0;
 int toggleValues=1;
 int toggleMode=0;
-int th=0; //azimuth view angle theta
-int ph=0; //elevation angle phi
-int fov=60; //field of view
-int asp=1; // aspect ratio
-int viewgrid=0; //to view the grid
-int front=0; //to view frontview
-int top=0;   //to view top view
-int side=0;   //to view side view
-int object=1; //to view object
+int th=0; /*!azimuth view angle theta */
+int ph=0; /*! elevation angle phi */
+int fov=60; /*! field of view */
+int asp=1; /*! aspect ratio */
+int viewgrid=0; /*! to view the grid */
+int front=0; /*! to view frontview */
+int top=0;   /*! to view top view */
+int side=0;   /*! to view side view */
+int object=1; /*! to view object */
 
 void project();
 void drawAxes();

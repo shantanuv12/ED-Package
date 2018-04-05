@@ -1,6 +1,9 @@
 CC=gcc
 CXX=g++
-OBJECTS= reconstruct.o wireframe.o
+ODIR=/obj
+IDIR=/include
+SDIR=/src
+OBJECTS= $(ODIR)/reconstruct.o $(ODIR)/wireframe.o
 LIBS= -lGL -lglut -lGLU
 
 all: prog
@@ -8,8 +11,12 @@ all: prog
 prog: $(OBJECTS)
 	$(CXX) -o prog $(OBJECTS) $(LIBS)
 
-reconstruct.o: print.h prototypes.h screencasts.h wireframe.h reconstruct.cpp
-	$(CXX) -c reconstruct.cpp
+$(ODIR)/reconstruct.o: $(IDIR)/print.h $(IDIR)/prototypes.h $(IDIR)/screencasts.h $(IDIR)/wireframe.h $(SDIR)/reconstruct.cpp
+	$(CXX) -c $(SDIR)/reconstruct.cpp
 
-wireframe.o: wireframe.h wireframe.c
+$(ODIR/)wireframe.o: $(IDIR)/wireframe.h $(SDIR)/wireframe.c
 	$(CC) -c wireframe.c
+
+.PHONY: clean
+	rm -f $(ODIR)/*.o prog
+
