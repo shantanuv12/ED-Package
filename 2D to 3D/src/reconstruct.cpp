@@ -1,7 +1,7 @@
 /*The object created by the Algorithm is displayed on the OpenGL Window using the function present in this file*/
 
 extern "C"{
-	#include "wire1.h"
+	#include "wireframe.h"
 }
 #include <GL/glut.h>
 #include <math.h>
