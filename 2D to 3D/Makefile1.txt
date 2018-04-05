@@ -1,0 +1,3 @@
+g++ -c reconstruct.cpp
+gcc -c wireframe.c
+g++ -o recons reconstruct.o wireframe.o -lGL -lGLU - lglut

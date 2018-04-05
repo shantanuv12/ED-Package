@@ -3,7 +3,6 @@ int eds=1;
 void wire()
 {
 FILE *file=fopen("testfile.txt","w");
-FILE *fp=fopen("input.txt","r");
 vertex tv[100],fv[100],sv[100],p_vertex[400],temp1;
 edge  te[100],fe[100], se[100],p_edge[400],temp;
 int i,n1,n2,index,flag;
@@ -18,28 +17,28 @@ void function_7();
 //printf("MAIN:\n");
 
 printf("ENTER THE NO OF VERTICES  IN FRONT VIEW :\t");
-fscanf(fp,"%d",&NOVF);
+scanf("%d",&NOVF);
 printf("\n");
 printf("Read The Front Vertices Set:\n");
 printf("x_coordinate       z_coordinate\n");
 for(i=1; i<=NOVF ; i++)
-fscanf(fp,"%f%f",&fv[i].x,&fv[i].z);
+scanf("%f%f",&fv[i].x,&fv[i].z);
 
 printf("ENTER THE NO OF VERTICES  IN TOP VIEW :\t");
-fscanf(fp,"%d",&NOVT);
+scanf("%d",&NOVT);
 printf("\n");
 printf("Read The Top Vertices Set:\n");
 printf("x_coordinate       y_coordinate\n");
 for(i=1; i<=NOVT ; i++)
-fscanf(fp,"%f%f",&tv[i].x,&tv[i].y);
+scanf("%f%f",&tv[i].x,&tv[i].y);
 
 printf("ENTER THE NO OF VERTICES  IN SIDE VIEW :\t");
-fscanf(fp,"%d",&NOVS);
+scanf("%d",&NOVS);
 printf("\n");
 printf("Read The Side Vertices Set:\n");
 printf("y_coordinate       z_coordinate\n");
 for(i=1; i<=NOVS ; i++)
-fscanf(fp,"%f%f",&sv[i].y,&sv[i].z);
+scanf("%f%f",&sv[i].y,&sv[i].z);
 /*
 printf("(Front Vertices Set:)\n");
 printf("x_coordinate       z_coordinate\n");
@@ -62,13 +61,13 @@ printf("EDGE INPUT:-->\n");
 
 
 printf("ENTER THE NO OF EDGES IN TOP  VIEW :\t");
-fscanf(fp,"%d",&NOET);
+scanf("%d",&NOET);
 printf("\n");
 printf("TOP EDGE\n");
 printf("start_vertex_no            finish_vertex_no\n");
 for(i=1;i<=NOET;i++)
 {
-   fscanf(fp,"%d%d",&n1,&n2);
+   scanf("%d%d",&n1,&n2);
    te[i].v_s.x = tv[n1].x;
    te[i].v_s.y = tv[n1].y;
    te[i].v_f.x = tv[n2].x;
@@ -87,12 +86,12 @@ for(i=1;i<=NOET;i++)
 
 printf("SIDE EDGE\n");
 printf("ENTER THE NO OF EDGES IN SIDE  VIEW :\t");
-fscanf(fp,"%d",&NOES);
+scanf("%d",&NOES);
 printf("\n");
 printf("start_vertex_no            finish_vertex_no\n");
 for(i=1;i<=NOES;i++)
 {
-   fscanf(fp,"%d%d",&n1,&n2);
+   scanf("%d%d",&n1,&n2);
    se[i].v_s.y = sv[n1].y;
    se[i].v_s.z = sv[n1].z;
    se[i].v_f.y = sv[n2].y;
@@ -111,7 +110,7 @@ for(i=1;i<=NOES;i++)
 
 
 printf("ENTER THE NO OF EDGES IN FRONT VIEW :\t");
-fscanf(fp,"%d",&NOEF);
+scanf("%d",&NOEF);
 printf("\n");
 printf("FRONT EDGE\n");
 printf("start_vertex_no            finish_vertex_no\n");
@@ -179,7 +178,6 @@ for (i=1;i<eds;i++)
 }
 /*END OF THE MAIN */
 fclose(file);
-fclose(fp);
 }
 
 /*********************************************
@@ -652,9 +650,9 @@ vertex fv;
    }
   }
 }
-/*
+
 int main(int argc, char const *argv[]) {
 	wire();
 	return 0;
-}*/
+}
 /************************************************/

@@ -1,7 +1,15 @@
+/*The object created by the Algorithm is displayed on the OpenGL Window using the function present in this file*/
+
+extern "C"{
+	#include "wire1.h"
+}
 #include <GL/glut.h>
 #include <math.h>
 #include <string.h>
+#include <fstream>
 #include <iostream>
+#include "screencasts.h"
+#include "prototypes.h"
 using namespace std;
 #define PI 3.1415926535898 // Defining Pi
 #define Cos(t) cos(PI/180*(t))
@@ -19,16 +27,7 @@ int ph=0; //elevation angle phi
 int fov= 55; //field of view
 int asp=1; // aspect ratio
 
-GLfloat vertA[3]={0.5,0.5,0.5};
-GLfloat vertB[3]={-0.5,0.5,0.5};
-GLfloat vertC[3]={-0.5,-0.5,0.5};
-GLfloat vertD[3]={0.5,-0.5,0.5};
-GLfloat vertE[3]={0.5,0.5,-0.5};
-GLfloat vertF[3]={-0.5,0.5,-0.5};
-GLfloat vertG[3]={-0.5,-0.5,-0.5};
-GLfloat vertH[3]={0.5,-0.5,-0.5};
-
-void project(){
+void project(){         /*To project the content on screen*/
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 
@@ -45,7 +44,7 @@ void project(){
 	glLoadIdentity();
 }
 
-void drawAxes(){
+void drawAxes(){			/*Function to draw the Axes on Scree/Window*/
 	if(toggleAxes){
 		double len=2.0;
 		glColor3f(1.0,1.0,1.0);
@@ -57,82 +56,25 @@ void drawAxes(){
 		glVertex3d(0,0,0);
 		glVertex3d(0,0,len);
 		glEnd();
-
-		glRasterPos3d(len,0,0);
-	//	print("X");
-	        glRasterPos3d(0,len,0);
-	//	print("Y");
-      		glRasterPos3d(0,0,len);
-	//	print("Z");
 	}
 }
 
-void drawValues(){
-	if(toggleValues){
-		glColor3f(0.8,0.8,0.8);
-	//	printAt(5,5,"View Angle (th,ph)=(%d,&d)",th,ph);
-	//	printAt(5,25,"Projection mode=(%s)",toggleMode?"Perspective":"Orthogonal");
-		glRasterPos3fv(vertA);
-	//	print("A");
-		glRasterPos3fv(vertB);
-	//	print("B");
-		glRasterPos3fv(vertC);
-	//	print("C");
-		glRasterPos3fv(vertD);
-	//	print("D");
-		glRasterPos3fv(vertE);
-	//	print("E");
-		glRasterPos3fv(vertF);
-	//	print("F");
-		glRasterPos3fv(vertG);
-	//	print("G");
-		glRasterPos3fv(vertH);
-	//	print("H");
-	}
+void drawShape(){				/*Function to draw the object obtained after generating the wire frame*/
+    ifstream infile("testfile.txt");
+    float x1,y1,z1,x2,y2,z2;
+    while(infile>>x1>>y1>>z1>>x2>>y2>>z2){
+        glBegin(GL_LINES);
+        glColor3f(1.0,0,0);
+        glVertex3f(x1,y1,z1);
+        glVertex3f(x2,y2,z2);
+        glEnd();
+    }
 }
 
-
-
-void drawShape(){
-	glBegin(GL_QUADS);
-	glColor3f(1.0,1.0,1.0);
-	glVertex3fv(vertA);
-	glVertex3fv(vertB);
-	glVertex3fv(vertC);
-	glVertex3fv(vertD);
-	glColor3f(1.0,0.0,0.0);
-	glVertex3fv(vertE);
-	glVertex3fv(vertF);
-	glVertex3fv(vertH);
-	glVertex3fv(vertG);
-	glColor3f(0.0,1.0,0.0);
-	glVertex3fv(vertA);
-	glVertex3fv(vertF);
-	glVertex3fv(vertB);
-	glVertex3fv(vertE);
-	glColor3f(0.0,0.0,0.1);
-	glVertex3fv(vertA);
-	glVertex3fv(vertF);
-	glVertex3fv(vertD);
-	glVertex3fv(vertG);
-	glColor3f(1.0,1.0,0.0);
-	glVertex3fv(vertB);
-	glVertex3fv(vertE);
-	glVertex3fv(vertC);
-	glVertex3fv(vertH);
-	glColor3f(0.0,1.0,1.0);
-	glVertex3fv(vertD);
-	glVertex3fv(vertG);
-	glVertex3fv(vertH);
-	glVertex3fv(vertC);
-	glEnd();
-}
-
-void display(){
+void display(){					/*Function to display the contents on the screens*/
 	glClear(GL_COLOR_BUFFER_BIT| GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
-        glLoadIdentity();
-
+    glLoadIdentity();
 
 	if(toggleMode){
 		double Ex=-2*dim*Sin(th)*Cos(ph);
@@ -146,7 +88,6 @@ void display(){
 		glRotatef(th,0,1,0);
 	}
 	drawAxes();
-	drawValues();
 	drawShape();
 
 	glFlush();
@@ -155,47 +96,53 @@ void display(){
 
 
 
-void reshape(int width,int height){
+void reshape(int width,int height){				/*Function to reshape the objects displayed on screen*/
 	asp=(height>0)? (double)width/height :1;
 	glViewport(0,0,width,height);
 	project();
 }
 
-void windowKey(unsigned char key, int x, int y){
+void windowKey(unsigned char key, int x, int y){			/*Function to which maps operations to keys input*/
+	/*Keys:-
+		Esc     -    Exit
+		j		-	 ToggeleAxes
+   		k       -    toggleValues
+		l		-	 toggleMode
+		u & i	-	 change field of view
+		o & p	-	 change dim
+		*/
 	if(key==27) exit(0);
 	else if(key=='j') toggleAxes=1-toggleAxes;
 	else if(key=='k') toggleValues=1-toggleValues;
 	else if(key=='l')toggleMode=1-toggleMode;
 	else if(key=='u'&&key>1) fov-=1;
 	else if(key=='i'&& key<179) fov+=1;
-	else if(key=='o') dim+=0.1;
-	else if(key=='p') dim-=0.1;
+	else if(key=='o') dim+=0.5;
+	else if(key=='p') dim-=0.5;
 	project();
 	glutPostRedisplay();
 }
 
-void windowSpecial(int key,int x,int y){
+void windowSpecial(int key,int x,int y){				/*Function to map operations to Special Keys*/
 	if(key==GLUT_KEY_RIGHT) th+=5;
 	else if(key==GLUT_KEY_LEFT) th-=5;
 	else if(key==GLUT_KEY_UP) ph+=5;
 	else if(key==GLUT_KEY_DOWN) ph-=5;
-
 	th%=360;
 	ph%=360;
-
 	project();
 	glutPostRedisplay();
 
 }
 
 
-void WindowMenu(int val){
+void WindowMenu(int val){				/*Function to initialise menu*/
 	windowKey((unsigned char)val,0,0);
-
 }
 
 
 int main(int argc, char* argv[]){
+	wire();
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
 	glutInitWindowSize(windowWidth,windowHeight);
