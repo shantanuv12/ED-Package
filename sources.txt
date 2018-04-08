@@ -1,0 +1,13 @@
+These are the following links/tutorials/People whose help we have taken in the assignment:-
+
+1) https://www.youtube.com/watch?v=IkyO5YmfdEI&t=139s
+2) https://www.youtube.com/watch?v=QGmeU7awkh4
+3) https://www.youtube.com/watch?v=SAmD_Aq1Un4&t=205s
+4) https://www.youtube.com/watch?v=exQ43PFWJBU
+5) https://www.youtube.com/watch?v=vcMox6i8f4Y&t=46s
+6) https://www.youtube.com/watch?v=uX3Iil0F51U
+7) https://www.youtube.com/watch?v=QO4NTBWJQLg&t=117s
+8) https://github.com/davidwparker/opengl-screencasts-1
+9) https://www.cse.iitk.ac.in/users/amit/courses/ME751/98/sasmai/index.html
+10) Manav Rao (2016CS10523)
+
